@@ -1,13 +1,16 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI Pipeline for Pull request
+
+permissions:
+  repository-projects: read
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
   pull_request:
+    types:
+      - opened
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -27,10 +30,21 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo Hello, world! Hussein Ayoub Test Workflow
+      # - name: Install modules
+      #   run: yarn
+      
+      # - name: Run eslint on changed files
+      #   uses: tj-actions/eslint-changed-files@v10.1
+      #   with:
+      #     token: ${{ github.token }}
+      #     config_path: ".eslintrc"
+      #     extra_args: "--max-warnings=0"
+      #     file_extensions: |
+      #       **/*.ts
+      #       **/*.tsx
+      # - name: Slack Notification 
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #      SLACK_MESSAGE: 'Testing'
