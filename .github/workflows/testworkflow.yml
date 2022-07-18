@@ -31,7 +31,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world! Hussein Ayoub Test Workflow
+        run: echo Hello, world! Hussein Ayoub Test Workflows
       # - name: Install modules
       #   run: yarn
       
